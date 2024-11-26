@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genres</title>
+</head>
+<body>
+  <h1>Genres</h1>
+  <a href="/genres/add">Add Genre</a>
+  <ul>
+    <% genres.forEach(genre => { %>
+      <li>
+        <strong><%= genre.name %></strong>
+        <a href="/genres/edit/<%= genre.id %>">Edit</a>
+        <form action="/genres/delete/<%= genre.id %>" method="POST" style="display:inline;">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>

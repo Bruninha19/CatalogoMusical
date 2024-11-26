@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Catálogo de Discos</title>
+</head>
+<body>
+    <h1>Discos</h1>
+    <a href="/discs/add">Adicionar Disco</a>
+    <ul>
+        <% discs.forEach(disc => { %>
+            <li>
+                <strong><%= disc.title %></strong> - <%= disc.releaseYear %> <br>
+                Artista: <%= disc.Artist ? disc.Artist.name : 'Desconhecido' %> <br>
+                Gêneros: <%= disc.Genres.map(g => g.name).join(', ') %> <br>
+                <a href="/discs/edit/<%= disc.id %>">Editar</a>
+                <form action="/discs/delete/<%= disc.id %>" method="POST" style="display:inline;">
+                    <button type="submit">Excluir</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>

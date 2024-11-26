@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Adicionar Disco</title>
+</head>
+<body>
+    <h1>Adicionar Disco</h1>
+    <form action="/discs/add" method="POST">
+        <label for="title">Título:</label>
+        <input type="text" name="title" required><br>
+        <label for="releaseYear">Ano:</label>
+        <input type="number" name="releaseYear" required><br>
+        <label for="cover">Capa (URL):</label>
+        <input type="text" name="cover"><br>
+        <button type="submit">Salvar</button>
+    </form>
+</body>
+</html>

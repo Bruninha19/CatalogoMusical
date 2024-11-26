@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artists</title>
+</head>
+<body>
+  <h1>Artists</h1>
+  <a href="/artists/add">Add Artist</a>
+  <ul>
+    <% artists.forEach(artist => { %>
+      <li>
+        <strong><%= artist.name %></strong> - <%= artist.genre ? artist.genre.name : 'No genre' %>
+        <a href="/artists/edit/<%= artist.id %>">Edit</a>
+        <form action="/artists/delete/<%= artist.id %>" method="POST" style="display:inline;">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>
